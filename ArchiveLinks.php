@@ -10,7 +10,7 @@ class ArchiveLinks
             $attribs['href'] = $url;
             $archiveAttribs = [
                 'rel'  => $attribs['rel'],
-                'href' => 'https://web.archive.org/web/*/'.$url,
+                'href' => 'https://web.archive.org/web/'.$url,
             ];
             if (isset($attribs['target'])) {
                 $archiveAttribs['target'] = $attribs['target'];
