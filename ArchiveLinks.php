@@ -4,7 +4,7 @@ namespace ArchiveLinks;
 
 class ArchiveLinks
 {
-    public static function onLinkerMakeExternalLink(&$url, &$text, &$link, array &$attribs, $linktype)
+    public static function onLinkerMakeExternalLink($url, $text, &$link, array &$attribs, $linktype)
     {
         $attribs['href'] = $url;
         $archiveAttribs = [
