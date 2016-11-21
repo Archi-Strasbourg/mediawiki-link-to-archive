@@ -1,6 +1,6 @@
 {
-	"name": "archi-strasbourg/archive-links",
-	"description": "Add a link to archive.org to every external link",
-	"type": "mediawiki-extension",
-	"license": "GPL-3.0"
+  "name": "archi-strasbourg/archive-links",
+  "description": "Add a link to archive.org to every external link",
+  "type": "mediawiki-extension",
+  "license": "GPL-3.0"
 }
