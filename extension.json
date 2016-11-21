@@ -1,0 +1,16 @@
+{
+  "name": "Archive Links",
+  "author": "Pierre Rudloff",
+  "license-name": "GPL-3.0",
+  "version": "0.1.0",
+  "description": "Add a link to archive.org to every external link",
+  "url": "https://github.com/Archi-Strasbourg/mediawiki-archive-links",
+  "Hooks": {
+    "LinkerMakeExternalLink": [
+      "ArchiveLinks\\ArchiveLinks::onLinkerMakeExternalLink"
+    ]
+  },
+  "AutoloadClasses": {
+    "ArchiveLinks\\ArchiveLinks": "ArchiveLinks.php"
+  }
+}
