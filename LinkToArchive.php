@@ -1,8 +1,8 @@
 <?php
 
-namespace ArchiveLinks;
+namespace LinkToArchive;
 
-class ArchiveLinks
+class LinkToArchive
 {
     public static function onLinkerMakeExternalLink($url, $text, &$link, array &$attribs, $linktype)
     {
