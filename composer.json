@@ -1,5 +1,5 @@
 {
-  "name": "archi-strasbourg/archive-links",
+  "name": "archi-strasbourg/link-to-archive",
   "description": "Add a link to archive.org to every external link",
   "type": "mediawiki-extension",
   "license": "GPL-3.0"
