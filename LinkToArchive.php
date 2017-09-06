@@ -6,7 +6,9 @@ class LinkToArchive
 {
     public static function onLinkerMakeExternalLink($url, $text, &$link, array &$attribs, $linktype)
     {
-        if ($linktype) {
+        if ($linktype
+            && in_array(parse_url($url, PHP_URL_SCHEME), ['http', 'https'])
+        ) {
             $attribs['href'] = $url;
             $archiveAttribs = [
                 'rel'  => $attribs['rel'],
