@@ -17,5 +17,6 @@
     "ArchiHome": [
       "i18n"
     ]
-  }
+  },
+  "manifest_version": 2
 }
