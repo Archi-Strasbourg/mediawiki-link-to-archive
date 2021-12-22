@@ -27,7 +27,7 @@ class LinkToArchive
             if (isset($attribs['target'])) {
                 $archiveAttribs['target'] = $attribs['target'];
             }
-            $link = Html::rawElement('a', $attribs, $text) . ' <sup>' . Html::rawElement('a', $archiveAttribs, '[' . wfMessage('archive')->parse() . ']') . '</sup>';
+            $link = Html::rawElement('a', $attribs, $text) . ' <sup class="ext-link-to-archive">' . Html::rawElement('a', $archiveAttribs, '[' . wfMessage('archive')->parse() . ']') . '</sup>';
 
             //We need to return false if we want to modify the HTML of external links
             return false;
