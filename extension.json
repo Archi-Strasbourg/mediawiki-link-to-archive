@@ -1,4 +1,5 @@
 {
+  "manifest_version": 2,
   "name": "Link to Archive",
   "author": "Pierre Rudloff",
   "license-name": "GPL-3.0",
