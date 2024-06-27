@@ -19,6 +19,10 @@ class LinkToArchive
         if ($linktype
             && in_array(parse_url($url, PHP_URL_SCHEME), ['http', 'https'])
         ) {
+            // Check if the URL ends with "action=edit"
+            if (strpos($url, 'action=edit') !== false) {
+                return null;
+            }
             $attribs['href'] = $url;
             $archiveAttribs = [
                 'rel' => $attribs['rel'],
