@@ -16,7 +16,8 @@ class LinkToArchive
      */
     public static function onLinkerMakeExternalLink($url, $text, &$link, array &$attribs, $linktype)
     {
-        if ($linktype
+        if (
+            $linktype
             && in_array(parse_url($url, PHP_URL_SCHEME), ['http', 'https'])
         ) {
             // Check if the URL ends with "action=edit"
@@ -33,7 +34,7 @@ class LinkToArchive
             }
             $link = Html::rawElement('a', $attribs, $text) . ' <sup>' . Html::rawElement('a', $archiveAttribs, '[' . wfMessage('archive')->parse() . ']') . '</sup>';
 
-            //We need to return false if we want to modify the HTML of external links
+            // We need to return false if we want to modify the HTML of external links
             return false;
         }
 
