@@ -2,6 +2,7 @@
 
 namespace LinkToArchive;
 
+use BadMethodCallException;
 use Html;
 
 class LinkToArchive
@@ -12,9 +13,9 @@ class LinkToArchive
      * @param $link
      * @param array $attribs
      * @param $linktype
-     * @return bool
+     * @return bool|null
      */
-    public static function onLinkerMakeExternalLink($url, $text, &$link, array &$attribs, $linktype)
+    public static function onLinkerMakeExternalLink($url, $text, &$link, array &$attribs, $linktype): ?bool
     {
         if (
             $linktype
@@ -32,7 +33,14 @@ class LinkToArchive
             if (isset($attribs['target'])) {
                 $archiveAttribs['target'] = $attribs['target'];
             }
-            $link = Html::rawElement('a', $attribs, $text) . ' <sup>' . Html::rawElement('a', $archiveAttribs, '[' . wfMessage('archive')->parse() . ']') . '</sup>';
+
+            try {
+                $label = wfMessage('archive')->parse();
+            } catch (BadMethodCallException) {
+                $label = 'archive';
+            }
+
+            $link = Html::rawElement('a', $attribs, $text) . ' <sup>' . Html::rawElement('a', $archiveAttribs, '[' . $label . ']') . '</sup>';
 
             // We need to return false if we want to modify the HTML of external links
             return false;
