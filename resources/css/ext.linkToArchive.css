@@ -1,0 +1,46 @@
+/* Styles for archive links */
+.mw-archive-link {
+	display: inline-block;
+	margin-left: 0.3em;
+	font-size: 0.85em;
+	padding: 0.1em 0.4em;
+	line-height: 1.4;
+	font-weight: normal;
+	border-radius: 3px;
+	background-color: #f8f9fa;
+	border: 1px solid #a2a9b1;
+	color: #202122;
+	text-decoration: none !important;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+
+.mw-archive-link:hover {
+	background-color: #eaecf0;
+	color: #000;
+	text-decoration: none !important;
+	border-color: #72777d;
+}
+
+/* Special styling for different types of archive links */
+.mw-archive-link.archive-web {
+	background-color: #eaf3ff;
+	border-color: #72a7e3;
+}
+
+.mw-archive-link.archive-today {
+	background-color: #fef6e7;
+	border-color: #fc3;
+}
+
+.mw-archive-link.archive-onion {
+	background-color: #f3f9f4;
+	border-color: #14866d;
+}
+
+/* Ensure links are visible in all contexts */
+a.mw-archive-link {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: inline-block !important;
+}

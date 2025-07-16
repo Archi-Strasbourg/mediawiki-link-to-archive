@@ -1,1 +1,8 @@
-vendor/
+.*.swp
+*~
+/.project
+/composer.lock
+/vendor
+/node_modules
+/.eslintcache
+/.stylelintcache

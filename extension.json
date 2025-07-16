@@ -1,22 +1,44 @@
 {
-  "manifest_version": 2,
-  "name": "Link to Archive",
-  "author": "Pierre Rudloff",
-  "license-name": "GPL-3.0",
-  "version": "1.0.0",
-  "description": "Add a link to archive.org to every external link",
-  "url": "https://github.com/Archi-Strasbourg/mediawiki-link-to-archive",
-  "Hooks": {
-    "LinkerMakeExternalLink": [
-      "LinkToArchive\\LinkToArchive::onLinkerMakeExternalLink"
-    ]
-  },
-  "AutoloadClasses": {
-    "LinkToArchive\\LinkToArchive": "LinkToArchive.php"
-  },
-  "MessagesDirs": {
-    "ArchiHome": [
-      "i18n"
-    ]
-  }
+	"name": "Link to Archive",
+	"author": "Pierre Rudloff",
+	"license-name": "GPL-3.0",
+	"version": "1.1.0",
+	"descriptionmsg": "linktoarchive-desc",
+	"url": "https://github.com/Archi-Strasbourg/mediawiki-link-to-archive",
+	"Hooks": {
+		"OutputPageParserOutput": [
+			"LinkToArchive\\LinkToArchive"
+		],
+		"BeforePageDisplay": [
+			"LinkToArchive\\LinkToArchive::onBeforePageDisplay"
+		]
+	},
+	"AutoloadClasses": {
+		"LinkToArchive\\LinkToArchive": "src/LinkToArchive.php"
+	},
+	"MessagesDirs": {
+		"LinkToArchive": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.linkToArchive": {
+			"scripts": [
+				"js/linkToArchive.js"
+			],
+			"dependencies": [
+				"ext.linkToArchive.styles"
+			]
+		},
+		"ext.linkToArchive.styles": {
+			"styles": [
+				"css/ext.linkToArchive.css"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "LinkToArchive/resources"
+	},
+	"manifest_version": 2
 }
